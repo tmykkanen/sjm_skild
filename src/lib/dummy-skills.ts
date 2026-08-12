@@ -1,0 +1,67 @@
+export const dummySkills: SkillRecord[] = [
+  {
+    id: "skl_00001",
+    title: "React Component Design",
+    slug: "react-component-design",
+    description:
+      "Build reusable, accessible, and maintainable React components.",
+    category: "Development",
+    tags: ["react", "typescript", "components", "frontend"],
+    installCommand: "npx skills add react-component-design",
+    createdAt: "2026-08-01T12:00:00.000Z",
+    authorClerkId: "user_dummy_001",
+    authorEmail: "alex@example.com",
+  },
+  {
+    id: "skl_00002",
+    title: "Database Schema Design",
+    slug: "database-schema-design",
+    description:
+      "Design relational database schemas with clear relationships, constraints, and indexes.",
+    category: "Development",
+    tags: ["database", "sql", "postgresql", "schema"],
+    installCommand: "npx skills add database-schema-design",
+    createdAt: "2026-08-02T14:30:00.000Z",
+    authorClerkId: "user_dummy_002",
+    authorEmail: "jordan@example.com",
+  },
+  {
+    id: "skl_00003",
+    title: "Technical Writing",
+    slug: "technical-writing",
+    description:
+      "Write clear and concise documentation for software projects and APIs.",
+    category: "Writing",
+    tags: ["documentation", "writing", "api", "developer-experience"],
+    installCommand: "npx skills add technical-writing",
+    createdAt: "2026-08-03T09:15:00.000Z",
+    authorClerkId: null,
+    authorEmail: null,
+  },
+  {
+    id: "skl_00004",
+    title: "Git Workflow",
+    slug: "git-workflow",
+    description:
+      "Use practical Git workflows for branching, commits, pull requests, and releases.",
+    category: "Development",
+    tags: ["git", "github", "version-control", "workflow"],
+    installCommand: "npx skills add git-workflow",
+    createdAt: "2026-08-04T16:45:00.000Z",
+    authorClerkId: "user_dummy_003",
+    authorEmail: "sam@example.com",
+  },
+  {
+    id: "skl_00005",
+    title: "Project Planning",
+    slug: "project-planning",
+    description:
+      "Break complex projects into manageable milestones, tasks, and deliverables.",
+    category: "Productivity",
+    tags: ["planning", "project-management", "tasks", "productivity"],
+    installCommand: "npx skills add project-planning",
+    createdAt: null,
+    authorClerkId: "user_dummy_004",
+    authorEmail: "taylor@example.com",
+  },
+];
