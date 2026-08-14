@@ -7,7 +7,6 @@ import {
   Copy,
   MessageSquare,
 } from "lucide-react";
-import { create } from "node:domain";
 import { useState } from "react";
 
 const SkillCard = ({
