@@ -1,4 +1,4 @@
-import { Show, SignInButton, UserButton } from "@clerk/tanstack-react-start";
+import { Show, UserButton } from "@clerk/tanstack-react-start";
 import { Link } from "@tanstack/react-router";
 import { LogIn } from "lucide-react";
 
