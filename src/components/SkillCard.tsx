@@ -8,6 +8,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { useState } from "react";
+import { usePostHog } from "posthog-js/react";
 
 const SkillCard = ({
   authorEmail,
@@ -19,10 +20,14 @@ const SkillCard = ({
   title,
 }: SkillRecord) => {
   const [copied, setCopied] = useState(false);
+  const posthog = usePostHog();
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(installCommand);
+      posthog.capture("skill_install_command_copied", {
+        skill_category: category,
+      });
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -37,6 +42,9 @@ const SkillCard = ({
         tabIndex={-1}
         aria-label={`Open ${title}`}
         className="overlay"
+        onClick={() =>
+          posthog.capture("skill_opened", { skill_category: category })
+        }
       />
       <div className="chrome">
         <div className="chrome-bar">
@@ -65,7 +73,13 @@ const SkillCard = ({
           <p className="category">{category}</p>
         </div>
         <div className="summary">
-          <Link to="/skills" className="title-link">
+          <Link
+            to="/skills"
+            className="title-link"
+            onClick={() =>
+              posthog.capture("skill_opened", { skill_category: category })
+            }
+          >
             <h3>{title}</h3>
           </Link>
           <p>{description}</p>
@@ -99,7 +113,14 @@ const SkillCard = ({
           </div>
 
           <div className="actions">
-            <Link to="/skills" className="open" title={`Open ${title}`}>
+            <Link
+              to="/skills"
+              className="open"
+              title={`Open ${title}`}
+              onClick={() =>
+                posthog.capture("skill_opened", { skill_category: category })
+              }
+            >
               <span>Open</span>
               <ArrowUpRight size={14} />
             </Link>
